@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Exercice 4</title>
+</head>
+  <body>
+    <form>
+      <label for="motdepasse">Votre mot de passe : </label><input type="text" name="motdepasse" value="" id="motdepasse"/>
+      <label for="confirmation">Confirmez : </label><input type="text" name="confirmation" value="" id="confirmation"/>
+      <button type="button" name="button"  onclick="checked();">Vérification</button>
+    </form>
+    <script>
+    function checked(){
+      var password=document.getElementById('motdepasse').value;
+      var confirm=document.getElementById('confirmation').value;
+      if (password && confirm){
+        if (password == confirm){ //si mdp identique
+          console.log('mdp identique')
+          document.getElementById('motdepasse').style.border = '4px solid green';
+          document.getElementById('confirmation').style.border = '4px solid green';
+        }else { //si mdp différent
+          console.log('mdp différent')
+          document.getElementById('motdepasse').style.border='4px solid red';
+          document.getElementById('confirmation').style.border='4px solid red';
+        }
+      }else{ //si mdp vide
+        console.log('saisir un mdp');
+        document.getElementById('motdepasse').style.border='1px solid grey';
+        document.getElementById('confirmation').style.border='1px solid grey';
+      }
+    };
+    </script>
+  </body>
+</html>
